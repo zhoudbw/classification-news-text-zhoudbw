@@ -12,6 +12,18 @@
 链接: https://pan.baidu.com/s/1O4FSex0LU-ut13Hz97tZdQ 提取码: w9rq 
 ```
 
+**说明4**：classification-news-text-zhodbw下的每个文件都是一个单独的项目，使用时将其作为一个单独工程使用。
+
+```
+比如：
+---classification-news-text-zhoudbw
+------iFreeTiger-v1.0
+...
+* iFreeTiger-v1.0便是单独的一个工程。
+* 所以应该创建同名的工程，然后将其中的文件复制进去。
+* 通过requirements.txt安装相应环境，即可正常使用。
+```
+
 ---
 
 <div style="color:red">iFreeTiger1.0的功能如下：</div>
