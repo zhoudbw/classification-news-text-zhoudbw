@@ -1,0 +1,63 @@
+
+
+
+.productmain{max-width:1200px; margin-top:20px; float:left;} 
+.producttitle{width:1200px; background:#f7f7ff; float:left;}
+.producttitle li{ float:left; border:1px solid #d9d9e6;width:130px;font-size:14px; line-height:44px; color:#545963; text-align:center;}
+.producttitle .click03{width:632px; background-color:#f7f7ff; height:44px;}
+.producttitle li span{font-size:14px; color:#ff4400; margin-left:2px;}
+
+.product01{ width:1200px; padding-left:19px;padding-right:19px; border-top:none;}
+.product03{ width:1200px; padding-left:19px;padding-right:19px; border-top:none;}
+.product04{width:1200px; padding-left:19px;padding-right:19px; border-top:none;}
+
+/*tab*/
+.con0{ width:1200px; height: auto; overflow:hidden;zoom:1; background-color: #fff; margin: 20px auto 0 auto; padding:0 0 30px 0;}
+
+.tab1{width:620px; height: 300px;border-top: dashed 1px #ccc;border-left: dashed 1px #ccc;border-right: dashed 1px #ccc; margin: 30px 30px 0 30px; float: left;}
+.tab1 ul{font-style:normal; }
+.tab1 ul li{color:#333; line-height: 50px; height: 50px; font-size: 16px;border-bottom: dashed 1px #ccc; text-align: center;}
+.tab1 ul li h1{width:200px; height: 50px;border-right: dashed 1px #ccc;font-size: 15px;line-height: 50px; float: left;}
+.tab1 ul li h2{ width:400px; height: 50px; float: left;font-size: 15px;line-height: 50px;text-align: center; }
+.tab2{width:460px; height: 300px;border-top: dashed 1px #ccc;border-left: dashed 1px #ccc;border-right: dashed 1px #ccc;float: left; margin:30px 0 0 0;}
+.tab2 ul{font-style:normal; }
+.tab2 ul li{color:#333; line-height: 50px; height: 50px; font-size: 16px;border-bottom: dashed 1px #ccc; text-align: center;}
+.tab2 ul li h1{width:217px; height: 50px;border-right: dashed 1px #ccc;font-size: 15px;line-height: 50px; float: left;}
+.tab2 ul li h2{ width:230px; height: 50px; float: left;font-size: 15px;line-height: 50px;text-align: center; }
+
+
+
+
+.tab3{ width:760px;height: 730px; float:left; margin: 30px 0 0 30px;}
+.tab3 ul{ font-style:normal;}
+.tab3 ul li{ width:220px; height: 150px; float: left; margin: 0 30px 30px 0;}
+.tab3 ul li img{ width:220px; height: 150px;}
+.tab4{ width:350px; height: 700px; float: left; border-radius: 10px; border: dashed 1px #ccc;  margin-top:30px;}
+.tab4 h1{width:290px; margin: 0 auto; line-height: 50px; height: 50px; text-align: center; color: #333; border-bottom: dashed 1px #ccc;font-size: 16px; font-weight: bold;}
+.tab4 ul{font-style:normal;width:300px; margin: 0 auto; }
+.tab4 ul li{ width:290px; white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; margin: 0 auto; height: 50px; line-height: 50px;border-bottom: dashed 1px #ccc; font-size: 15px; color: #333;}
+.tab4 ul li i{font-style:normal; color:#ff8300; font-size: 16px; font-weight: bold; margin-right: 8px;}
+.tab4 ul li a{ color:#333; text-decoration:none;}
+.tab4 ul li a:hover{ color:#ff8300;text-decoration:none;}
+.tab4 h2{ width:290px;margin: 0 auto; height: 40px; line-height: 40px; text-align: center; font-size: 14px; color: #999; text-align: right;}
+.tab4 h2 a{ color:#999;text-decoration:none;}
+.tab4 h2 a:hover{ color:#ff8300;text-decoration:none;}
+
+
+
+
+.tab5{width:540px; height: 240px;border-top: dashed 1px #ffffff;border-left: dashed 1px #ffffff;border-right: dashed 1px #ffffff;float: left; margin: 30px 15px 0  15px;}
+.tab5 ul{font-style:normal; }
+.tab5 ul li{color:#333; line-height: 40px; height: 40px; font-size: 16px;border-bottom: dashed 1px #ccc; text-align: center;}
+.tab5 ul li b{ color:#ff8300; font-size: 18px;}
+.tab5 ul li h1{width:195px; height: 40px; white-space: nowrap;
+    overflow: hidden;border-left: dashed 1px #ccc;
+    text-overflow: ellipsis;border-right: dashed 1px #ccc;font-size: 15px;line-height: 40px; float: left;}
+.tab5 ul li h2{ width:165px; border-right: dashed 1px #ccc;height: 40px; float: left;font-size: 15px;line-height: 40px;text-align: center; }
+.tab5 ul li h3{width:538px; border-right: dashed 1px #ccc;border-left: dashed 1px #ccc;height: 40px;font-size: 13px;line-height: 40px; float: left; text-align: left;  text-indent: 10px; color: #999;}
+.tab5 ul li h4{ width:178px;border-right: dashed 1px #ccc;height: 40px; float: left;font-size: 15px;line-height: 40px;text-align: center; }
+.tab5 ul li h5{width:195px; height: 40px;border-left: dashed 1px #ccc;border-right: dashed 1px #ccc;font-size: 15px;line-height: 40px; float: left; font-weight: bold;}
+.tab5 ul li h6{ width:165px; border-right: dashed 1px #ccc;height: 40px; float: left;font-size: 15px;line-height: 40px;text-align: center;font-weight: bold; }
+.tab5 ul li h7{ width:178px;height: 40px; border-right: dashed 1px #ccc;float: left;font-size: 15px;line-height: 40px;text-align: center;font-weight: bold; }

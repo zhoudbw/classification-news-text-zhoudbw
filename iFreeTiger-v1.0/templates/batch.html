@@ -1,0 +1,737 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>爬山虎</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="../static/css/chart.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/thems.css">
+  <script type="text/javascript" src="../static/js/jquery-1.8.3.min.js"></script>
+
+    <style>
+        /*loading样式*/
+        .datagrid-mask {
+            background: #d3d3d352;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .datagrid-mask-msg {
+            border-color: #d3d3d352;
+            position: absolute;
+            margin-top: -20px;
+            padding: 10px 5px 10px 30px;
+            width: auto;
+            height: 50px;
+            border-width: 2px;
+            border-style: solid;
+            background: #ffffff url(../static/images/loading.gif) no-repeat scroll 5px center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+  <div class="banner">
+    <div class="banner_tabs">
+      <ul class="slides">
+        <li><img width="1920" height="1080" alt="" style=" background:url(../static/images/banner.jpg) no-repeat center;"
+            src="../static/images/alpha.png"></li>
+        <li><img width="1920" height="1080" alt="" style=" background:url(../static/images/banner1.jpg) no-repeat center;"
+            src="../static/images/alpha.png"></li>
+        <li><img width="1920" height="1080" alt="" style=" background:url(../static/images/banner2.jpg) no-repeat center;"
+            src="../static/images/alpha.png"></li>
+        <li><img width="1920" height="1080" alt="" style=" background:url(../static/images/banner3.jpg) no-repeat center;"
+            src="../static/images/alpha.png"></li>
+        <li><img width="1920" height="1080" alt="" style=" background:url(../static/images/banner4.jpg) no-repeat center;"
+            src="../static/images/alpha.png"></li>
+      </ul>
+    </div>
+  </div>
+  <div id="wrapper" class="wrapper">
+    <div class="header sticky-header">
+      <div class="header-bottomarea">
+        <div class="container">
+          <div class="header-bottominner">
+            <div class="header-logo">
+              <a href="index.html">
+                <img src="../static/images/logo.png" alt="deconsult logo">
+              </a>
+            </div>
+            <nav class="tm-navigation">
+              <ul>
+                <li><a href="/">单条预测</a></li>
+                <li><a href="batch.html">批量预测</a></li>
+              </ul>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <main class="page-content">
+      <div class="con1">
+
+        <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+          <input id="file" class="input1" name="file" type="file" />
+          <a href="javascript:;" id="doUpload" class="easyui-linkbutton a1" οnclick="doUploadFile()"
+            style="width:80px"><input id="default-btn" type="file" hidden>
+            <input type="submit" value="上传" onclick="test()"></a>
+        </form>
+
+      </div>
+
+      <div class="con0">
+        <div class="conter">
+          <div class="disleft">
+            <div class="productmain">
+              <ol class="producttitle">
+                <li class="click01">结果分析</li>
+                <li class="click04">新闻展示</li>
+                <li class="click06">错分优化</li>
+                <div class="clearfix"></div>
+              </ol>
+              <div class="clearfix"></div>
+              <div class="productbigbox">
+
+                  <div class="product04">
+                  <div class="tab5">
+                    <ul>
+                      <li><b>错分数据</b></li>
+                      <li>
+                        <h5>新闻内容</h5>
+                        <h6>错分类别</h6>
+                        <h7>正确类别</h7>
+                      </li>
+                      <li>
+                        <h1>胸怀“青春”梦想 书写“不老”传奇</h1>
+                        <h2>娱乐</h2>
+                        <h4>体育</h4>
+                      </li>
+                      <li>
+                        <h1>文章陪女儿参加舞蹈比赛 爱马身材高挑</h1>
+                        <h2>体育</h2>
+                        <h4>娱乐</h4>
+                      </li>
+                      <li>
+                        <h1>体操队美女如云、游泳队帅哥扎堆</h1>
+                        <h2>体育</h2>
+                        <h4>娱乐</h4>
+                      </li>
+                      <li>
+                        <h3>若要矫正上述错分数据，请点击“上传按钮”提交分类好的数据源</h3>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="tab5">
+                    <ul>
+                      <li><b>错分数据</b></li>
+                      <li>
+                        <h5>新闻内容</h5>
+                        <h6>错分类别</h6>
+                        <h7>新闻来源</h7>
+                      </li>
+                      <li>
+                        <h1>你选谁？2021港姐20强佳丽再穿比基尼亮相</h1>
+                        <h2>体育</h2>
+                        <h4>娱乐</h4>
+                      </li>
+                      <li>
+                        <h1>资金逆势涌入 中概互联网ETF规模持续扩大</h1>
+                        <h2>教育</h2>
+                        <h4>财经</h4>
+                      </li>
+                      <li>
+                        <h1>安吉港中旅和乐小镇商业配套@港中旅和乐小镇</h1>
+                        <h2>财经</h2>
+                        <h4>房产</h4>
+                      </li>
+                      <li>
+                        <h3>若要矫正上述错分数据，请点击“上传按钮”提交分类好的数据源</h3>
+                      </li>
+                    </ul>
+
+                </div>
+
+                </div>
+                <div class="product03">
+                  <div class="tab3">
+                    <ul>
+                      <li>
+                        <figure class="sample">
+                          <img src="../static/images/财经1.webp" alt="财经" />
+                          <figcaption>
+                            <div>
+                              <h4>财经</h4>
+                              <h6>点击了解更多详情</h6>
+                            </div>
+                          </figcaption>
+                          <a href="javascript:;" id="econo"></a>
+                        </figure>
+                      </li>
+                      <li>
+                        <figure class="sample hover">
+                          <img src="../static/images/科技.jpg" alt="科技" />
+                          <figcaption>
+                            <div>
+                              <h4>科技</h4>
+                              <h6>点击了解更多详情</h6>
+                            </div>
+                          </figcaption>
+                          <a href="javascript:;" id="science"></a>
+                        </figure>
+                      </li>
+                      <li>
+                        <figure class="sample">
+                          <img src="../static/images/汽车.webp" alt="汽车" />
+                          <figcaption>
+                            <div>
+                              <h4>汽车</h4>
+                              <h6>点击了解更多详情</h6>
+                            </div>
+                          </figcaption>
+                          <a href="javascript:;" id="automobile"></a>
+                        </figure>
+                      </li>
+                      <li>
+                        <figure class="sample">
+                          <img src="../static/images/房产.jpg" alt="房产" />
+                          <figcaption>
+                            <div>
+                              <h4>房产</h4>
+                              <h6>点击了解更多详情</h6>
+                            </div>
+                          </figcaption>
+                          <a href="javascript:;" id="building"></a>
+                        </figure>
+                      </li>
+                      <li>
+                        <figure class="sample">
+                          <img src="../static/images/游戏 .webp" alt="游戏" />
+                          <figcaption>
+                            <div>
+                              <h4>游戏</h4>
+                              <h6>点击了解更多详情</h6>
+                            </div>
+                          </figcaption>
+                          <a href="javascript:;" id="game"></a>
+                        </figure>
+                      </li>
+                      <li>
+                        <figure class="sample">
+                          <img src="../static/images/教育.jpg" alt="教育" />
+                          <figcaption>
+                            <div>
+                              <h4>教育</h4>
+                              <h6>点击了解更多详情</h6>
+                            </div>
+                          </figcaption>
+                          <a href="javascript:;" id="education"></a>
+                        </figure>
+                      </li>
+                      <li>
+                        <figure class="sample">
+                          <img src="../static/images/军事.webp" alt="军事" />
+                          <figcaption>
+                            <div>
+                              <h4>军事</h4>
+                              <h6>点击了解更多详情</h6>
+                            </div>
+                          </figcaption>
+                          <a href="javascript:;" id="military"></a>
+                        </figure>
+                      </li>
+                      <li>
+                        <figure class="sample">
+                          <img src="../static/images/体育.webp" alt="体育" />
+                          <figcaption>
+                            <div>
+                              <h4>体育</h4>
+                              <h6>点击了解更多详情</h6>
+                            </div>
+                          </figcaption>
+                          <a href="javascript:;" id="sport"></a>
+                        </figure>
+                      </li>
+                      <li>
+                        <figure class="sample">
+                          <img src="../static/images/娱乐.webp" alt="娱乐" />
+                          <figcaption>
+                            <div>
+                              <h4>娱乐</h4>
+                              <h6>点击了解更多详情</h6>
+                            </div>
+                          </figcaption>
+                          <a href="javascript:;" id="recreation"></a>
+                        </figure>
+                      </li>
+                      <li>
+                        <figure class="sample">
+                          <img src="../static/images/其他2.jpg" alt="其他" />
+                          <figcaption>
+                            <div>
+                              <h4>其他</h4>
+                              <h6>点击了解更多详情</h6>
+                            </div>
+                          </figcaption>
+                          <a href="javascript:;" id="other"></a>
+                        </figure>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="tab4">
+                    <h1 id="category">财经类新闻</h1>
+                    <ul id="content">
+                        {% for item in news_list1 %}
+                            <li><i>◆</i><a href="#">{{ item }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    <h2><a href="#">更多>></a></h2>
+                  </div>
+                </div>
+                <div class="product01">
+                  <div class="tab1">
+                    <ul>
+                      <li><b>文件分类概括</b></li>
+                      <li>
+                        <h1>分类总数</h1>
+                        <h2>{{ new_num }}&nbsp&nbsp&nbsp&nbsp条</h2>
+                      </li>
+                      <li>
+                        <h1>分类用时</h1>
+                        <h2>{{ time_cc }}&nbsp&nbsp&nbsp&nbsp秒</h2>
+                      </li>
+                      <li>
+                        <h1>分类准确率</h1>
+                        <h2>90%</h2>
+                      </li>
+                      <li>
+                        <h1>f1-score值</h1>
+                        <h2>90%</h2>
+                      </li>
+                      <li><b><a href="/download">下载分类数据</a></b></li>
+                    </ul>
+                  </div>
+                  <div class="tab2">
+                    <ul>
+                      <li><b>各类新闻具体数目</b></li>
+                      <li>
+                        <h1>财经：{{ num1 }}</h1>
+                        <h2>房产：{{ num2 }}</h2>
+                      </li>
+                      <li>
+                        <h1>教育：{{ num3 }}</h1>
+                        <h2>科技：{{ num4 }}</h2>
+                      </li>
+                      <li>
+                        <h1>军事：{{ num5 }}</h1>
+                        <h2>汽车：{{ num6 }}</h2>
+                      </li>
+                      <li>
+                        <h1>体育：{{ num7 }}</h1>
+                        <h2>游戏：{{ num8 }}</h2>
+                      </li>
+                      <li>
+                        <h1>娱乐：{{ num9 }}</h1>
+                        <h2>其它：{{ num10 }}</h2>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="con4">
+                    <div class="data_left">
+                      <div class="left_bottom">
+                        <!-- <div class="left_top_title">饼图</div>-->
+                        <div id="Business_type" class="left_top_main left_bottom_main"></div>
+                      </div>
+                    </div>
+
+                    <div class="data_right">
+                      <div class="right_top">
+                        <!--<div class="left_top_title">柱图</div>-->
+                        <div id="Land_analysis" class="left_top_main right_top_main"></div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+                <script>
+                  $(".product04").hide()
+                  $(".product05").hide()
+                  $(".product02").hide()
+                  $(".product03").hide()
+                  $(".click01").css("border-top", "2px solid red").css("border-bottom", "none").css("background-color", "white")
+                  $(".click02").click(function () {
+                    $(".product02").show()
+                    $(".product01").hide()
+                    $(".product03").hide()
+                    $(".product04").hide()
+                    $(".product05").hide()
+                    $(".click02").css("border-top", "2px solid red").css("border-bottom", "none").css("background-color", "white")
+                    $(".click01").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                    $(".click04").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                    $(".click06").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                    $(".click07").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                  })
+                  $(".click01").click(function () {
+                    $(".product01").show()
+                    $(".product02").hide()
+                    $(".product03").hide()
+                    $(".product04").hide()
+                    $(".product05").hide()
+                    $(".click01").css("border-top", "2px solid red").css("border-bottom", "none").css("background-color", "white")
+                    $(".click02").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                    $(".click04").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                    $(".click06").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                    $(".click07").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                  })
+                  $(".click04").click(function () {
+                    $(".product03").show()
+                    $(".product02").hide()
+                    $(".product01").hide()
+                    $(".product04").hide()
+                    $(".product05").hide()
+                    $(".click04").css("border-top", "2px solid red").css("border-bottom", "none").css("background-color", "white")
+                    $(".click02").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                    $(".click01").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                    $(".click06").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                    $(".click07").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                  })
+                  $(".click06").click(function () {
+                    $(".product04").show()
+                    $(".product02").hide()
+                    $(".product01").hide()
+                    $(".product03").hide()
+                    $(".product05").hide()
+                    $(".click06").css("border-top", "2px solid red").css("border-bottom", "none").css("background-color", "white")
+                    $(".click02").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                    $(".click01").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                    $(".click04").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                    $(".click07").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                  })
+                  $(".click07").click(function () {
+                    $(".product05").show()
+                    $(".product02").hide()
+                    $(".product01").hide()
+                    $(".product03").hide()
+                    $(".product04").hide()
+                    $(".click07").css("border-top", "2px solid red").css("border-bottom", "none").css("background-color", "white")
+                    $(".click02").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                    $(".click01").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                    $(".click04").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                    $(".click06").css("border-top", "1px solid #d9d9e6").css("border-bottom", "1px solid #d9d9e6").css("background-color", "#f7f7ff")
+                  })
+                </script>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+    <div class="footer1">
+      <p>爬山虎 &nbsp&nbsp 组长：周威威 &nbsp&nbsp&nbsp 队员：王桂娟，李姝娴</p>
+    </div>
+  </div>
+  <!-- Js Files -->
+
+  <script src="../static/js/jquery.min.js"></script>
+  <script src="../static/js/main.js"></script>
+  <script src="../static/js/slider.js"></script>
+  <script src="../static/js/time.js"></script>
+  <script src="../static/js/echarts-en.min.js"></script>
+   <script type="text/javascript">
+      var eco=document.getElementById("econo");
+      var science=document.getElementById("science");
+      var auto=document.getElementById("automobile");
+      var build=document.getElementById("building");
+      var game=document.getElementById("game");
+      var edu=document.getElementById("education");
+      var mil=document.getElementById("military");
+      var sport=document.getElementById("sport");
+      var rec=document.getElementById("recreation");
+      var other=document.getElementById("other");
+
+      var cate=document.getElementById("category");
+      var cont=document.getElementById("content");
+
+      eco.onclick=function(){
+        cate.innerHTML="财经类新闻";
+        cont.innerHTML='<ul id="content">{% for item in news_list1 %}<li><i>◆</i><a href="#">{{ item }}</a></li>{% endfor %}</ul>';
+      }
+      science.onclick=function(){
+          cate.innerHTML="科技类新闻";
+          cont.innerHTML='<ul id="content">{% for item in news_list3 %}<li><i>◆</i><a href="#">{{ item }}</a></li>{% endfor %}</ul>';
+
+      }
+      auto.onclick=function(){
+        cate.innerHTML="汽车类新闻";
+        cont.innerHTML='<ul id="content">'+
+                        '{% for item in news_list7 %}'+
+                            '<li><i>◆</i><a href="#">{{ item }}</a></li>' +
+                       ' {% endfor %}'+
+                    '</ul>';
+      }
+      build.onclick=function(){
+        cate.innerHTML="房产类新闻";
+        cont.innerHTML='<ul id="content">'+
+                        '{% for item in news_list2 %}'+
+                            '<li><i>◆</i><a href="#">{{ item }}</a></li>' +
+                       ' {% endfor %}'+
+                    '</ul>';
+      }
+      game.onclick=function(){
+        cate.innerHTML="游戏类新闻";
+        cont.innerHTML='<ul id="content">'+
+                        '{% for item in news_list9 %}'+
+                            '<li><i>◆</i><a href="#">{{ item }}</a></li>' +
+                       ' {% endfor %}'+
+                    '</ul>';
+      }
+      edu.onclick=function(){
+        cate.innerHTML="教育类新闻";
+        cont.innerHTML='<ul id="content">'+
+                        '{% for item in news_list6 %}'+
+                            '<li><i>◆</i><a href="#">{{ item }}</a></li>' +
+                       ' {% endfor %}'+
+                    '</ul>';
+      }
+      mil.onclick=function(){
+        cate.innerHTML="军事类新闻";
+        cont.innerHTML='<ul id="content">'+
+                        '{% for item in news_list4 %}'+
+                            '<li><i>◆</i><a href="#">{{ item }}</a></li>' +
+                       ' {% endfor %}'+
+                    '</ul>';
+      }
+      sport.onclick=function(){
+        cate.innerHTML="体育类新闻";
+        cont.innerHTML='<ul id="content">{% for item in news_list5 %}<li><i>◆</i><a href="#">{{ item }}</a></li>{% endfor %}</ul>';
+      }
+      rec.onclick=function(){
+        cate.innerHTML="娱乐类新闻";
+        cont.innerHTML='<ul id="content">'+
+                        '{% for item in news_list8 %}'+
+                            '<li><i>◆</i><a href="#">{{ item }}</a></li>' +
+                       ' {% endfor %}'+
+                    '</ul>';
+      }
+      other.onclick=function(){
+        cate.innerHTML="其他类新闻";
+        cont.innerHTML='<ul id="content">'+
+                        '{% for item in news_list10 %}'+
+                            '<li><i>◆</i><a href="#">{{ item }}</a></li>' +
+                       ' {% endfor %}'+
+                    '</ul>';
+
+    }
+  </script>
+  <script type="text/javascript">
+    function OSnow() {
+      var agent = navigator.userAgent.toLowerCase();
+      var isMac = /macintosh|mac os x/i.test(navigator.userAgent);
+      if (agent.indexOf("win32") >= 0 || agent.indexOf("wow32") >= 0) {
+        $(".main").css("height", "880px");
+      }
+      if (agent.indexOf("win64") >= 0 || agent.indexOf("wow64") >= 0) {
+        $(".main").css("height", "880px");
+      }
+      if (isMac) {
+
+      }
+    }
+    OSnow();
+    function numInit() {
+      $('.counter-value').each(function () {
+        $(this).prop('Counter', 0).animate({
+          Counter: $(this).text()
+        }, {
+          duration: 2500,
+          easing: 'swing',
+          step: function (now) {
+            $(this).text(now.toFixed(2));
+          }
+        });
+      });
+    }
+
+    numInit();
+    // 基于准备好的dom，初始化echarts实例
+    var i = 0;
+    var myChart1 = echarts.init(document.getElementById('Business_type'));
+
+    // 指定图表的配置项和数据
+    option1 = {
+      tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+      },
+      legend: {
+        x: 'center',
+        y: 'bottom',
+        data: ['财经', '房产', '科技', '军事', '体育', '教育', '汽车', '娱乐', '游戏', '其他'],
+        textStyle: {
+          color: '#333333',
+        }
+      },
+      series: [
+        {
+          name: '访问来源',
+          type: 'pie',
+          radius: ['30%', '55%'],
+          center: ['45%', '35%'],
+          avoidLabelOverlap: false,
+          data: [
+            {% for k,v in dic_item.items() %}
+                {value: {{ v }}, name: {{ k|tojson }}},
+            {% endfor %}
+          ],
+          itemStyle: {
+            emphasis: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+          }
+        }
+      ],
+      color: ['#F3DB5D', '#009AFF', '#F77474', '#28DCCF', '#FF5937', '#ffa311', '#29be29', '#ff4fbb', '#554dff', '#ba4dff']
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart1.setOption(option1);
+
+
+    var myChart2 = echarts.init(document.getElementById('Land_analysis'));
+
+    option2 = {
+      legend: {
+        x: 'right',
+        y: 'top',
+        textStyle: {
+          color: '#333333',
+        }
+      },
+      grid: {
+        x: 30,
+        y: 50,
+        x2: 0,
+        y2: 45
+      },
+      tooltip: {},
+      dataset: {
+        source: [
+          ['product', '新闻数量'],
+            {% for k,v in dic_item.items() %}
+                [ {{ k|tojson }} , {{ v }} ],
+            {% endfor %}
+        ]
+      },
+      xAxis: {
+        type: 'category',
+        axisLine: {
+          show: false,
+          lineStyle: {
+            color: "#666666",
+          },
+        },
+        // data: ["财经","房产","科技","军事","体育","教育","汽车","娱乐","游戏","其他"],
+        axisTick: {
+          alignWithLabel: true
+        }
+      },
+      yAxis: {
+        axisLine: {
+          lineStyle: {
+            color: "#333333",
+          }
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#cccccc'
+          }
+        }
+      },
+      series: [
+        {
+          type: 'bar',
+          barMaxWidth: '20',
+          itemStyle: {
+            normal: {
+              color: '#ff9e05'
+            },
+          },
+        },
+      ]
+    };
+    myChart2.setOption(option2);
+
+
+    // 初始化图表
+    var map = new Highcharts.Map('map', option4);
+  </script>
+<script>
+    const defaultBtn = document.querySelector("#default-btn");
+    const customBtn = document.querySelector("#custom-btn");
+    const fileName = document.querySelector(".file-name");
+    function active() {
+        defaultBtn.click();
+    }
+    defaultBtn.addEventListener("change", function () {
+        if (this.value) {
+            let nameValue = this.value;
+            fileName.textContent = nameValue;
+        }
+    });
+</script>
+<script>
+    function test() {
+        console.log('asd')
+        ajaxLoading('数据处理中,请稍候...');
+        setTimeout(function () {
+            ajaxLoadEnd()
+        }, 2000);
+    }
+    //使用loading效果
+    function ajaxLoading(msg) {
+        addPanelMask();
+        $("<div class='datagrid-mask-msg'></div>").html(msg ? msg : "数据处理中,请稍候...").appendTo("body").css({
+            "display": "block",
+            "z-index": 99999,
+            "left": ($(document.body).outerWidth(true) - 190) / 2,
+            "top": ($(window).height() - 45) / 2
+        });
+
+    }
+
+    //遮罩整个界面
+    function addPanelMask() {
+        $("<div class='datagrid-mask'></div>").appendTo("body").css({
+            "display": "block",
+            "z-index": 9999,
+            "width": "100%",
+            "height": $(window).height()
+        });
+    }
+
+    //移除界面遮罩层
+    // function ajaxLoadEnd() {
+    //     $(".datagrid-mask").remove();
+    //     $(".datagrid-mask-msg").remove();
+    // }
+</script>
+
+</body>
+
+</html>

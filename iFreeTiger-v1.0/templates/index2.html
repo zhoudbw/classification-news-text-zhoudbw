@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>爬山虎</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+
+<body>
+    <div class="banner">
+        <div class="banner_tabs">
+            <ul class="slides">
+                <li><img width="1920" height="1080" alt="" style=" background:url(../static/images/banner.jpg) no-repeat center;"
+                        src="../static/images/alpha.png"></li>
+                <li><img width="1920" height="1080" alt="" style=" background:url(../static/images/banner1.jpg) no-repeat center;"
+                        src="../static/images/alpha.png"></li>
+                <li><img width="1920" height="1080" alt="" style=" background:url(../static/images/banner2.jpg) no-repeat center;"
+                        src="../static/images/alpha.png"></li>
+                <li><img width="1920" height="1080" alt="" style=" background:url(../static/images/banner3.jpg) no-repeat center;"
+                        src="../static/images/alpha.png"></li>
+                <li><img width="1920" height="1080" alt="" style=" background:url(../static/images/banner4.jpg) no-repeat center;"
+                        src="../static/images/alpha.png"></li>
+            </ul>
+        </div>
+    </div>
+    <div id="wrapper" class="wrapper">
+        <div class="header sticky-header">
+            <div class="header-bottomarea">
+                <div class="container">
+                    <div class="header-bottominner">
+                        <div class="header-logo">
+                            <a href="index.html">
+                                <img src="../static/images/logo.png" alt="deconsult logo">
+                            </a>
+                        </div>
+                        <nav class="tm-navigation">
+                            <ul>
+                                <li><a href="/">单条预测</a></li>
+                                <li><a href="batch.html">批量预测</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <main class="page-content">
+            <form action="/predict" method="post">
+                <div class="search"><input type="text" name="news"  placeholder="输入将要预测的单条文本" /><button type="submit">预测</button></div>
+            </form>
+            <div class="con2">
+                <ul>
+                    <li>
+                        <h1>最终预测类别</h1>
+                        <h2>{{ possible_list }}</h2>
+                    </li>
+                    <li>
+                        <h1>最终生成时间</h1>
+                        <h2>{{ time_total }}&nbsp&nbsp&nbsp&nbsp秒</h2>
+                    </li>
+                    <li>
+                        <h1>生成的关键短语</h1>
+                        <h4>{{ title }}</h4>
+                    </li>
+                    <li>
+                        <h1>原新闻内容</h1>
+                        <h3>{{ new_content }}</h3>
+                    </li>
+                </ul>
+            </div>
+
+        </main>
+
+        <div class="footer1">
+            <p>爬山虎 &nbsp&nbsp 组长：周威威 &nbsp&nbsp&nbsp 队员：王桂娟，李姝娴</p>
+        </div>
+    </div>
+    <!-- Js Files -->
+
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/slider.js"></script>
+    <script src="../static/js/time.js"></script>
+    <script type="text/javascript" src="../static/js/jquery-1.8.3.min.js"></script>
+    <!-- 超出长度处理 -->
+    <script>
+        var text = $("h3").text();
+        $("h3").attr("title", text);
+    </script>
+    <script>
+        var text = $("h4").text();
+        $("h4").attr("title", text);
+    </script>
+</body>
+
+</html>

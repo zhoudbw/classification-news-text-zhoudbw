@@ -1,0 +1,8 @@
+xlwt==1.3.0
+numpy==1.19.5
+Flask==2.0.1
+transformers==4.6.1
+xlrd==2.0.1
+torch==1.8.0
+jionlp==1.3.27
+pkuseg==0.0.25
