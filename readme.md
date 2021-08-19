@@ -1,6 +1,6 @@
 ## 一种基于抽取式文本摘要和关键短语提取的新闻文本分类方法的WebApplication
 
-<div align="right" style="font-size:1.5em; font-weight:bold;">@author zhoudbw、WangGuijuan、LiShuxian</div>
+<div align="right" style="font-size:1.5em; font-weight:bold;">@author ZhouWeiwei、WangGuijuan、LiShuxian</div>
 
 **说明1**：该系统为完整的WebApplication，主要功能为新闻文本分类，可根据用户给出的数据预测出类别。
 
